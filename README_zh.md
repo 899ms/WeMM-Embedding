@@ -128,7 +128,7 @@ embedding = torch.nn.functional.normalize(embedding[..., :d], dim=-1)
 
 ### MMEB-v3
 
-结果来自[技术报告](assets/WeMM_Embedding_tech_report.pdf) Table 2，覆盖全部 190 个任务。V3-All 包含 78 个 MMEB-v2 任务、53 个文本任务、47 个 agent 任务、11 个音频任务以及 MCMR。不支持的任务记为零分。
+全部 190 个任务的评测结果，评测集详情见[技术报告](assets/WeMM_Embedding_tech_report.pdf)。V3-All 包含 78 个 MMEB-v2 任务、53 个文本任务、47 个 agent 任务、11 个音频任务以及 MCMR。不支持的任务记为零分。
 
 | Model | Size | V3-All | Text | Agent | MCMR | Audio |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -136,8 +136,8 @@ embedding = torch.nn.functional.normalize(embedding[..., :d], dim=-1)
 | Omni-Embed-Nemotron | 3B | 43.5 | 39.2 | 36.5 | 26.1 | 36.5 |
 | E5-Omni | 3B | 44.6 | 26.7 | 36.9 | 31.9 | 30.8 |
 | Qwen3-VL-Embedding | 2B | 50.9 | 39.2 | 39.3 | 42.0 | 0.0 |
-| **WeMM-Embedding** | **2B** | **56.0** | **45.3** | **45.1** | **42.5** | **0.0** |
-| **WeMM-Embedding** | **4B** | **58.2** | **47.9** | **49.0** | **41.9** | **0.0** |
+| **WeMM-Embedding** | **2B** | **55.8** | **45.3** | **44.1** | **42.5** | **0.0** |
+| **WeMM-Embedding** | **4B** | **58.0** | **47.9** | **48.1** | **41.9** | **0.0** |
 | WAVE | 7B | 26.3 | 13.7 | 11.3 | 8.9 | 31.8 |
 | VLM2Vec | 8B | 32.9 | 22.2 | 19.7 | 0.9 | 0.0 |
 | LCO-Embedding-Omni | 7B | 40.6 | 32.4 | 27.8 | 20.0 | 43.2 |
@@ -145,9 +145,11 @@ embedding = torch.nn.functional.normalize(embedding[..., :d], dim=-1)
 | E5-Omni | 7B | 47.1 | 26.9 | 36.7 | 41.1 | 43.0 |
 | Tianmu-Emb-Uni | 8B | 53.3 | 43.6 | 39.4 | 38.8 | 38.9 |
 | Qwen3-VL-Embedding | 8B | 53.5 | 42.5 | 38.4 | 38.0 | 0.0 |
-| **WeMM-Embedding** | **9B** | **59.5** | **48.8** | **51.0** | **49.3** | **0.0** |
+| **WeMM-Embedding** | **9B** | **59.3** | **48.8** | **50.1** | **49.3** | **0.0** |
 
 文本任务使用 NDCG@5；agent、MCMR 与音频任务使用 Hit@1。
+
+2026-09-16：按任务全局检索更新了 PeerQA、DeepPlanning 的分数及相关汇总（[#9](https://github.com/Tencent/WeMM-Embedding/issues/9)）。
 
 `mmeb_v3_eval/` 包含用于产出报告结果的 MMEB-v3 评测代码。它基于官方 [TIGER-AI-Lab/VLM2Vec](https://github.com/TIGER-AI-Lab/VLM2Vec) 流水线，仅做最小改动：多机多卡推理（`torchrun --nnodes=N`）、实现我们预处理与 batched inference 的 `wemm_embedding` backbone、与已发布模型对齐的数据集 instruction，以及 64 帧视频采样。数据下载、单机与多机命令见 `mmeb_v3_eval/README.md`。
 
