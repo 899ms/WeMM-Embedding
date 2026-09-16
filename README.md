@@ -127,7 +127,7 @@ Results on 78 datasets from Table 1 of the [technical report](assets/WeMM_Embedd
 
 ### MMEB-v3
 
-Results on all 190 tasks from Table 2 of the [technical report](assets/WeMM_Embedding_tech_report.pdf). V3-All includes the 78 MMEB-v2 tasks, 53 text tasks, 47 agent tasks, 11 audio tasks, and MCMR. Unsupported tasks are assigned a score of zero.
+Results on all 190 tasks; see the [technical report](assets/WeMM_Embedding_tech_report.pdf) for benchmark details. V3-All includes the 78 MMEB-v2 tasks, 53 text tasks, 47 agent tasks, 11 audio tasks, and MCMR. Unsupported tasks are assigned a score of zero.
 
 | Model | Size | V3-All | Text | Agent | MCMR | Audio |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -135,8 +135,8 @@ Results on all 190 tasks from Table 2 of the [technical report](assets/WeMM_Embe
 | Omni-Embed-Nemotron | 3B | 43.5 | 39.2 | 36.5 | 26.1 | 36.5 |
 | E5-Omni | 3B | 44.6 | 26.7 | 36.9 | 31.9 | 30.8 |
 | Qwen3-VL-Embedding | 2B | 50.9 | 39.2 | 39.3 | 42.0 | 0.0 |
-| **WeMM-Embedding** | **2B** | **56.0** | **45.3** | **45.1** | **42.5** | **0.0** |
-| **WeMM-Embedding** | **4B** | **58.2** | **47.9** | **49.0** | **41.9** | **0.0** |
+| **WeMM-Embedding** | **2B** | **55.8** | **45.3** | **44.1** | **42.5** | **0.0** |
+| **WeMM-Embedding** | **4B** | **58.0** | **47.9** | **48.1** | **41.9** | **0.0** |
 | WAVE | 7B | 26.3 | 13.7 | 11.3 | 8.9 | 31.8 |
 | VLM2Vec | 8B | 32.9 | 22.2 | 19.7 | 0.9 | 0.0 |
 | LCO-Embedding-Omni | 7B | 40.6 | 32.4 | 27.8 | 20.0 | 43.2 |
@@ -144,9 +144,11 @@ Results on all 190 tasks from Table 2 of the [technical report](assets/WeMM_Embe
 | E5-Omni | 7B | 47.1 | 26.9 | 36.7 | 41.1 | 43.0 |
 | Tianmu-Emb-Uni | 8B | 53.3 | 43.6 | 39.4 | 38.8 | 38.9 |
 | Qwen3-VL-Embedding | 8B | 53.5 | 42.5 | 38.4 | 38.0 | 0.0 |
-| **WeMM-Embedding** | **9B** | **59.5** | **48.8** | **51.0** | **49.3** | **0.0** |
+| **WeMM-Embedding** | **9B** | **59.3** | **48.8** | **50.1** | **49.3** | **0.0** |
 
 Text results use NDCG@5; agent, MCMR, and audio results use Hit@1.
+
+PeerQA and DeepPlanning scores and affected aggregates were updated on 2026-09-16 using task-wide global retrieval ([#9](https://github.com/Tencent/WeMM-Embedding/issues/9)).
 
 `mmeb_v3_eval/` contains the MMEB-v3 evaluation code used to produce our reported numbers. It is the official [TIGER-AI-Lab/VLM2Vec](https://github.com/TIGER-AI-Lab/VLM2Vec) pipeline with a minimal diff: multi-node multi-GPU inference (`torchrun --nnodes=N`), a `wemm_embedding` backbone implementing our preprocessing and batched inference, dataset instructions aligned with the released model, and 64-frame video sampling. Data download, single-node and multi-node commands are documented in `mmeb_v3_eval/README.md`.
 

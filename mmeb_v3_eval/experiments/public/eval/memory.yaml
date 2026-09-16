@@ -15,12 +15,12 @@ memory/PeerQA:
   dataset_parser: memory_retrieval
   dataset_name: PeerQA
   data_path: memory-tasks/Semantic/PeerQA
-  # queries carry per-scene candidate lists (candidates.jsonl); rank within them
-  eval_type: local
+  # MMEB-v3 ranks against the full task corpus, not per-query candidate lists.
+  eval_type: global
 
 memory/DeepPlanning:
   dataset_parser: memory_retrieval
   dataset_name: DeepPlanning
   data_path: memory-tasks/Procedural/DeepPlanning
-  # queries carry per-case candidate lists (candidates.jsonl); rank within them
-  eval_type: local
+  # MMEB-v3 ranks against the full task corpus across all shopping levels.
+  eval_type: global
