@@ -1,0 +1,43 @@
+{
+  "case_id": "detail",
+  "task": "DOCCI_test_t2i",
+  "query_id": "q_text_1",
+  "original_query": "An outdoor front view of a turtle that is sitting on a floating tree trunk that has moss growing at the front of it. The turtle is yellow and green and has a dark green shell. The turtle is pointing his head up and soaking up the sun. On the water, there are a couple pieces of foam floating in the swamp. In the far background, there are multiple dried pieces of grass. On the far left side of the swamp, there is a fallen tree trunk that has moss on it.",
+  "display_query": "An outdoor front view of a turtle that is sitting on a floating tree trunk that has moss growing at the front of it. The turtle is yellow and green and has a dark green shell. The turtle is pointing his head up and soaking up the sun. On the water, there are a couple pieces of foam floating in the swamp. In the far background, there are multiple dried pieces of grass. On the far left side of the swamp, there is a fallen tree trunk that has moss on it.",
+  "candidate_count": 5000,
+  "ground_truth": {
+    "id": "q_text_1",
+    "relevant": [
+      "doc_img_1"
+    ]
+  },
+  "source_url": "https://google.github.io/docci/",
+  "predictions": {
+    "9B": {
+      "id": "q_text_1",
+      "ranked_results": [
+        {
+          "rank": 1,
+          "id": "doc_img_1",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "doc_img_2948",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "doc_img_2300",
+          "relevant": false
+        }
+      ]
+    }
+  },
+  "models": {
+    "9B": {
+      "name": "WeMM-Embedding-9B",
+      "dimension": 4096
+    }
+  }
+}

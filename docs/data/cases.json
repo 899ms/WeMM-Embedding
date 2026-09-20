@@ -1,0 +1,456 @@
+{
+  "cases": [
+    {
+      "id": "quantity",
+      "query_id": "CIRR_q_1001",
+      "label": "Image + instruction",
+      "title": "Refine image search with text instructions.",
+      "dataset": "CIRR · MMEB split",
+      "query": "Fewer paper towels per pack.",
+      "description": "Two paper-towel rolls are shown together, matching the requested reduction from the reference multipack.",
+      "notes": "The candidate pool is the 1,000-item MMEB evaluation subset, not the original full CIRR gallery.",
+      "original_query": "<image>\nGiven an image, find a similar everyday image with the described changes: Fewer paper towels per pack.\n",
+      "query_asset": {
+        "kind": "image",
+        "path": "assets/benchmarks/quantity/CIRR_q_1001.webp",
+        "width": 384,
+        "height": 256,
+        "alt": "Reference image: a Viva paper-towel multipack"
+      },
+      "candidate_count": 1000,
+      "evidence_path": "data/evidence/quantity.json",
+      "assets": {
+        "CIRR_q_1283": {
+          "kind": "image",
+          "path": "assets/benchmarks/quantity/CIRR_q_1001.webp",
+          "width": 384,
+          "height": 256,
+          "alt": "The same Viva paper-towel multipack as the reference image"
+        },
+        "CIRR_q_737": {
+          "kind": "image",
+          "path": "assets/benchmarks/quantity/CIRR_q_737.webp",
+          "width": 256,
+          "height": 512,
+          "alt": "Two Viva paper-towel rolls shown together"
+        },
+        "CIRR_q_1001": {
+          "kind": "image",
+          "path": "assets/benchmarks/quantity/CIRR_q_1001.webp",
+          "width": 384,
+          "height": 256,
+          "alt": "Reference image: a Viva paper-towel multipack"
+        },
+        "CIRR_q_212": {
+          "kind": "image",
+          "path": "assets/benchmarks/quantity/CIRR_q_212.webp",
+          "width": 256,
+          "height": 256,
+          "alt": "A Nicky Soft Touch multipack labeled Toilet Tissue"
+        }
+      },
+      "rankings": {
+        "9B": [
+          {
+            "id": "CIRR_q_737",
+            "relevant": true
+          },
+          {
+            "id": "CIRR_q_1283",
+            "relevant": false
+          },
+          {
+            "id": "CIRR_q_212",
+            "relevant": false
+          }
+        ]
+      },
+      "comparison_note": "Top-2 is an exact duplicate of the reference image, confirmed against the original source images. Top-3 is labeled toilet tissue. These are observable differences from the requested change.",
+      "comparison_annotations": {
+        "CIRR_q_1283": {
+          "assessment": "constraint_mismatch",
+          "label": "Mismatch",
+          "title": "Unchanged reference",
+          "detail": "Identical to the reference image; no reduction in quantity."
+        },
+        "CIRR_q_212": {
+          "assessment": "constraint_mismatch",
+          "label": "Mismatch",
+          "title": "Different product category",
+          "detail": "The package says “Toilet Tissue”; the query asks for paper towels."
+        }
+      }
+    },
+    {
+      "id": "fashion",
+      "query_id": "FashionIQ_q_6035",
+      "label": "Style refinement",
+      "title": "Refine fashion search with attribute changes.",
+      "dataset": "FashionIQ · MMEB split",
+      "query": "Is orange with thinner straps and is not patterned and orange.",
+      "description": "An unpatterned orange dress with thin straps matches the requested changes to the reference image.",
+      "notes": "The candidate pool is the 1,000-item MMEB evaluation subset, not the original full FashionIQ gallery.",
+      "original_query": "<image>\nFind an image to match the fashion image and style note: Is orange with thinner straps and is not patterned and orange.\n",
+      "query_asset": {
+        "kind": "image",
+        "path": "assets/benchmarks/fashion/FashionIQ_q_6035.webp",
+        "width": 256,
+        "height": 365,
+        "alt": "Reference image: a dark dress with a star pattern and shoulder straps"
+      },
+      "candidate_count": 1000,
+      "evidence_path": "data/evidence/fashion.json",
+      "assets": {
+        "FashionIQ_q_2761": {
+          "kind": "image",
+          "path": "assets/benchmarks/fashion/FashionIQ_q_2761.webp",
+          "width": 256,
+          "height": 365,
+          "alt": "An unpatterned orange dress with thin shoulder straps"
+        },
+        "FashionIQ_q_564": {
+          "kind": "image",
+          "path": "assets/benchmarks/fashion/FashionIQ_q_564.webp",
+          "width": 256,
+          "height": 306,
+          "alt": "A color-block dress with orange, pink and blue panels"
+        },
+        "FashionIQ_q_444": {
+          "kind": "image",
+          "path": "assets/benchmarks/fashion/FashionIQ_q_444.webp",
+          "width": 256,
+          "height": 365,
+          "alt": "A red-orange sleeveless dress with a black belt"
+        },
+        "FashionIQ_q_6035": {
+          "kind": "image",
+          "path": "assets/benchmarks/fashion/FashionIQ_q_6035.webp",
+          "width": 256,
+          "height": 365,
+          "alt": "Reference image: a dark dress with a star pattern and shoulder straps"
+        }
+      },
+      "rankings": {
+        "9B": [
+          {
+            "id": "FashionIQ_q_2761",
+            "relevant": true
+          },
+          {
+            "id": "FashionIQ_q_444",
+            "relevant": false
+          },
+          {
+            "id": "FashionIQ_q_564",
+            "relevant": false
+          }
+        ]
+      },
+      "comparison_note": "The requested color, absence of a pattern and thinner straps are assessed together. The belt is not itself a query constraint.",
+      "comparison_annotations": {
+        "FashionIQ_q_444": {
+          "assessment": "constraint_mismatch",
+          "label": "Mismatch",
+          "title": "Broader shoulder straps",
+          "detail": "The orange color fits, but the requested thin straps are not present."
+        },
+        "FashionIQ_q_564": {
+          "assessment": "constraint_mismatch",
+          "label": "Mismatch",
+          "title": "Multiple color panels",
+          "detail": "Orange, pink and blue panels do not satisfy the plain-orange request."
+        }
+      }
+    },
+    {
+      "id": "detail",
+      "query_id": "q_text_1",
+      "label": "Fine-grained detail",
+      "title": "Retrieve images from detailed descriptions.",
+      "dataset": "DOCCI · test",
+      "description": "The retrieved image matches the described turtle on a moss-covered floating trunk, with foam and dense vegetation around it.",
+      "notes": "The complete original description was used in evaluation. The initial query preview is an excerpt.",
+      "query": "An outdoor front view of a turtle that is sitting on a floating tree trunk that has moss growing at the front of it. The turtle is yellow and green and has a dark green shell. The turtle is pointing his head up and soaking up the sun. On the water, there are a couple pieces of foam floating in the swamp. In the far background, there are multiple dried pieces of grass. On the far left side of the swamp, there is a fallen tree trunk that has moss on it.",
+      "original_query": "An outdoor front view of a turtle that is sitting on a floating tree trunk that has moss growing at the front of it. The turtle is yellow and green and has a dark green shell. The turtle is pointing his head up and soaking up the sun. On the water, there are a couple pieces of foam floating in the swamp. In the far background, there are multiple dried pieces of grass. On the far left side of the swamp, there is a fallen tree trunk that has moss on it.",
+      "query_asset": null,
+      "candidate_count": 5000,
+      "evidence_path": "data/evidence/detail.json",
+      "assets": {
+        "doc_img_2300": {
+          "kind": "image",
+          "path": "assets/benchmarks/detail/doc_img_2300.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "A turtle on a long dark log beside tall reeds"
+        },
+        "doc_img_2948": {
+          "kind": "image",
+          "path": "assets/benchmarks/detail/doc_img_2948.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "Turtles on a log among trees and broad leaves"
+        },
+        "doc_img_1": {
+          "kind": "image",
+          "path": "assets/benchmarks/detail/doc_img_1.webp",
+          "width": 1280,
+          "height": 960,
+          "alt": "A turtle on a mossy floating trunk with foam in the water"
+        }
+      },
+      "rankings": {
+        "9B": [
+          {
+            "id": "doc_img_1",
+            "relevant": true
+          },
+          {
+            "id": "doc_img_2948",
+            "relevant": false
+          },
+          {
+            "id": "doc_img_2300",
+            "relevant": false
+          }
+        ]
+      },
+      "comparison_note": "Both nearby images match the broad turtle-on-log scene. The complete query adds moss, foam and precise surroundings that are not all clearly verifiable in these candidates. They are partial matches, not confirmed semantic negatives.",
+      "comparison_annotations": {
+        "doc_img_2948": {
+          "assessment": "partial_match",
+          "label": "Partial match",
+          "title": "Turtles on a log",
+          "detail": "The main subject fits. Broad leaves dominate; the specified moss and foam are unclear."
+        },
+        "doc_img_2300": {
+          "assessment": "partial_match",
+          "label": "Partial match",
+          "title": "Raised head, log and water",
+          "detail": "Several requested details fit; moss on the front of the trunk is not clearly visible."
+        }
+      }
+    },
+    {
+      "id": "text",
+      "query_id": "q_text_12",
+      "label": "Text in images",
+      "title": "Retrieve images by the text they contain.",
+      "dataset": "TextCaps · validation",
+      "description": "The matching storefront carries the requested “Red Corner Cafe” sign above its door.",
+      "notes": "Text-to-image retrieval over 3,166 validation images; multiple captions may refer to the same image.",
+      "query": "A corner building with a sign saying Red Corner Cafe above the door.",
+      "original_query": "A corner building with a sign saying Red Corner Cafe above the door.",
+      "query_asset": null,
+      "candidate_count": 3166,
+      "evidence_path": "data/evidence/text.json",
+      "assets": {
+        "doc_img_79": {
+          "kind": "image",
+          "path": "assets/benchmarks/text/doc_img_79.webp",
+          "width": 1024,
+          "height": 683,
+          "alt": "A different storefront with a prominent Corner sign"
+        },
+        "doc_img_0": {
+          "kind": "image",
+          "path": "assets/benchmarks/text/doc_img_0.webp",
+          "width": 768,
+          "height": 1024,
+          "alt": "A corner building with a Stella café sign"
+        },
+        "doc_img_2": {
+          "kind": "image",
+          "path": "assets/benchmarks/text/doc_img_2.webp",
+          "width": 768,
+          "height": 1024,
+          "alt": "A red corner building with a Red Corner Cafe sign"
+        }
+      },
+      "rankings": {
+        "9B": [
+          {
+            "id": "doc_img_2",
+            "relevant": true
+          },
+          {
+            "id": "doc_img_79",
+            "relevant": false
+          },
+          {
+            "id": "doc_img_0",
+            "relevant": false
+          }
+        ]
+      },
+      "comparison_note": "The target shows “Red Corner Cafe” above the door. Nearby results include another “Corner” storefront and a different corner café.",
+      "comparison_annotations": {
+        "doc_img_79": {
+          "assessment": "constraint_mismatch",
+          "label": "Mismatch",
+          "title": "“Corner,” a different café",
+          "detail": "The sign reads “the CORNER / La Esquina,” not “Red Corner Cafe.”"
+        },
+        "doc_img_0": {
+          "assessment": "constraint_mismatch",
+          "label": "Mismatch",
+          "title": "Different café name",
+          "detail": "A corner café, but the sign above the entrance reads “STELLA.”"
+        }
+      }
+    },
+    {
+      "id": "chart",
+      "query_id": "query_15017697005003.png-1",
+      "label": "Chart retrieval",
+      "title": "Retrieve charts relevant to a question.",
+      "dataset": "VisRAG · ChartQA",
+      "query": "What is land use per 100 kilocalories by Mutton & Goat Meat production?",
+      "description": "The retrieved chart uses the requested unit: land use per 100 kilocalories. Its categories include Mutton & Goat Meat.",
+      "notes": "This example retrieves the relevant chart. It does not generate or verify a numerical answer.",
+      "original_query": "What is land use per 100 kilocalories by Mutton & Goat Meat production?\nFind a document image that matches the given query:",
+      "query_asset": null,
+      "candidate_count": 500,
+      "evidence_path": "data/evidence/chart.json",
+      "assets": {
+        "doc_33979578000285.png": {
+          "kind": "image",
+          "path": "assets/benchmarks/chart/doc_33979578000285.webp",
+          "width": 850,
+          "height": 600,
+          "alt": "Protein efficiency of meat and dairy production"
+        },
+        "doc_08263936005626.png": {
+          "kind": "image",
+          "path": "assets/benchmarks/chart/doc_08263936005626.webp",
+          "width": 850,
+          "height": 600,
+          "alt": "Land use per 100 grams of protein across food products"
+        },
+        "doc_15017697005003.png": {
+          "kind": "image",
+          "path": "assets/benchmarks/chart/doc_15017697005003.webp",
+          "width": 850,
+          "height": 600,
+          "alt": "Land use per 100 kilocalories by food and production type"
+        }
+      },
+      "rankings": {
+        "9B": [
+          {
+            "id": "doc_15017697005003.png",
+            "relevant": true
+          },
+          {
+            "id": "doc_08263936005626.png",
+            "relevant": false
+          },
+          {
+            "id": "doc_33979578000285.png",
+            "relevant": false
+          }
+        ]
+      },
+      "comparison_note": "Land use per 100 kilocalories ranks above the closely related chart measured per 100 grams of protein. Open the figures to compare their titles.",
+      "comparison_annotations": {
+        "doc_08263936005626.png": {
+          "assessment": "constraint_mismatch",
+          "label": "Mismatch",
+          "title": "Same topic, different unit",
+          "detail": "Land use per 100 grams of protein; the query specifies 100 kilocalories."
+        },
+        "doc_33979578000285.png": {
+          "assessment": "constraint_mismatch",
+          "label": "Mismatch",
+          "title": "Different metric",
+          "detail": "The chart measures protein efficiency, not land use."
+        }
+      }
+    },
+    {
+      "id": "video",
+      "query_id": "query_427",
+      "label": "Video retrieval",
+      "title": "Retrieve videos from text.",
+      "dataset": "MSR-VTT · 1k-A",
+      "description": "The retrieved sequence follows the mountain scenery from the water. The preview plays every archived benchmark frame in its original order.",
+      "notes": "These silent previews play all sampled benchmark frames in order at 4 frames per second. Preview speed is illustrative; original video timing and audio are not reconstructed.",
+      "comparison_note": "Top-2 shows water and wooded hills without a clear boat viewpoint. Top-3 shows land-based travel scenes, including an elevated view over a lakeside village. The exact position implied by “center of a lake” cannot be established from these previews.",
+      "query": "the mountain views are from a boat on the center of a lake",
+      "original_query": "the mountain views are from a boat on the center of a lake",
+      "query_asset": null,
+      "candidate_count": 1000,
+      "evidence_path": "data/evidence/video.json",
+      "assets": {
+        "doc_video8307": {
+          "kind": "frames",
+          "preview": {
+            "path": "assets/benchmarks/video-lake/doc_video8307-020.jpg",
+            "width": 298,
+            "height": 224
+          },
+          "alt": "Blue water between rocky, wooded hills",
+          "playback": {
+            "path": "assets/benchmarks/video-lake/doc_video8307.mp4",
+            "type": "video/mp4"
+          }
+        },
+        "doc_video8312": {
+          "kind": "frames",
+          "preview": {
+            "path": "assets/benchmarks/video-lake/doc_video8312-023.jpg",
+            "width": 298,
+            "height": 224
+          },
+          "alt": "Mountain scenery filmed from a boat on the water",
+          "playback": {
+            "path": "assets/benchmarks/video-lake/doc_video8312.mp4",
+            "type": "video/mp4"
+          }
+        },
+        "doc_video9246": {
+          "kind": "frames",
+          "preview": {
+            "path": "assets/benchmarks/video-lake/doc_video9246-016.jpg",
+            "width": 298,
+            "height": 224
+          },
+          "alt": "Travel scenes with fields, a mountain lake beyond a village, and a train",
+          "playback": {
+            "path": "assets/benchmarks/video-lake/doc_video9246.mp4",
+            "type": "video/mp4"
+          }
+        }
+      },
+      "rankings": {
+        "9B": [
+          {
+            "id": "doc_video8312",
+            "relevant": true
+          },
+          {
+            "id": "doc_video8307",
+            "relevant": false
+          },
+          {
+            "id": "doc_video9246",
+            "relevant": false
+          }
+        ]
+      },
+      "comparison_annotations": {
+        "doc_video8307": {
+          "assessment": "partial_match",
+          "label": "Partial match",
+          "title": "Water and wooded hills",
+          "detail": "An elevated view framed by nearby branches; a boat viewpoint is not established."
+        },
+        "doc_video9246": {
+          "assessment": "constraint_mismatch",
+          "label": "Mismatch",
+          "title": "Land-based travel views",
+          "detail": "The lake is seen across a village; the sequence also shows fields and a train."
+        }
+      }
+    }
+  ]
+}

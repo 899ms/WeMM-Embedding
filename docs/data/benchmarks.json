@@ -1,0 +1,134 @@
+{
+  "v2": [
+    {
+      "model": "VLM2Vec",
+      "size": "2B",
+      "overall": 47.8,
+      "image": 59.7,
+      "video": 29.0,
+      "document": 44.0
+    },
+    {
+      "model": "GME",
+      "size": "2B",
+      "overall": 55.4,
+      "image": 51.9,
+      "video": 33.9,
+      "document": 76.8
+    },
+    {
+      "model": "VLM2Vec-V2",
+      "size": "2B",
+      "overall": 59.3,
+      "image": 64.9,
+      "video": 34.9,
+      "document": 69.2
+    },
+    {
+      "model": "Qwen3-VL-Embedding",
+      "size": "2B",
+      "overall": 73.2,
+      "image": 75.0,
+      "video": 61.9,
+      "document": 79.2
+    },
+    {
+      "model": "DME-Small†",
+      "size": "2B",
+      "overall": 74.8,
+      "image": 75.9,
+      "video": 65.6,
+      "document": 79.9
+    },
+    {
+      "model": "WeMM-Embedding",
+      "size": "2B",
+      "overall": 77.9,
+      "image": 79.6,
+      "video": 70.8,
+      "document": 80.7
+    },
+    {
+      "model": "WeMM-Embedding",
+      "size": "4B",
+      "overall": 79.2,
+      "image": 80.8,
+      "video": 72.1,
+      "document": 82.0
+    },
+    {
+      "model": "VLM2Vec",
+      "size": "8B",
+      "overall": 53.2,
+      "image": 65.5,
+      "video": 34.0,
+      "document": 49.1
+    },
+    {
+      "model": "GME",
+      "size": "8B",
+      "overall": 59.2,
+      "image": 56.0,
+      "video": 38.6,
+      "document": 79.3
+    },
+    {
+      "model": "Qwen3-VL-Embedding",
+      "size": "8B",
+      "overall": 77.8,
+      "image": 80.1,
+      "video": 67.1,
+      "document": 82.4
+    },
+    {
+      "model": "DME-Medium†",
+      "size": "9B",
+      "overall": 78.4,
+      "image": 79.8,
+      "video": 70.8,
+      "document": 82.0
+    },
+    {
+      "model": "WeMM-Embedding",
+      "size": "9B",
+      "overall": 80.6,
+      "image": 81.9,
+      "video": 74.3,
+      "document": 83.3
+    }
+  ],
+  "mrl": {
+    "baseline_dimension": 2048,
+    "points": [
+      {
+        "dimension": 256,
+        "image_retention": 98.7,
+        "video_retention": 98.7
+      },
+      {
+        "dimension": 512,
+        "image_retention": 99.2,
+        "video_retention": 98.8
+      },
+      {
+        "dimension": 2048,
+        "image_retention": 100.0,
+        "video_retention": 100.0
+      }
+    ]
+  },
+  "models": [
+    {
+      "size": "2B",
+      "max_dimension": 2048
+    },
+    {
+      "size": "4B",
+      "max_dimension": 2560
+    },
+    {
+      "size": "9B",
+      "max_dimension": 4096
+    }
+  ]
+}
