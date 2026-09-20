@@ -1,0 +1,46 @@
+{
+  "case_id": "chart",
+  "task": "VisRAG_ChartQA",
+  "query_id": "query_15017697005003.png-1",
+  "original_query": "What is land use per 100 kilocalories by Mutton & Goat Meat production?\nFind a document image that matches the given query:",
+  "display_query": "What is land use per 100 kilocalories by Mutton & Goat Meat production?",
+  "candidate_count": 500,
+  "ground_truth": {
+    "id": "query_15017697005003.png-1",
+    "relevant": [
+      "doc_15017697005003.png"
+    ],
+    "rel_scores": [
+      1.0
+    ]
+  },
+  "source_url": "https://huggingface.co/datasets/openbmb/VisRAG-Ret-Test-ChartQA",
+  "predictions": {
+    "9B": {
+      "id": "query_15017697005003.png-1",
+      "ranked_results": [
+        {
+          "rank": 1,
+          "id": "doc_15017697005003.png",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "doc_08263936005626.png",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "doc_33979578000285.png",
+          "relevant": false
+        }
+      ]
+    }
+  },
+  "models": {
+    "9B": {
+      "name": "WeMM-Embedding-9B",
+      "dimension": 4096
+    }
+  }
+}

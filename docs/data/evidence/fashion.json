@@ -1,0 +1,43 @@
+{
+  "case_id": "fashion",
+  "task": "FashionIQ",
+  "query_id": "FashionIQ_q_6035",
+  "original_query": "<image>\nFind an image to match the fashion image and style note: Is orange with thinner straps and is not patterned and orange.\n",
+  "display_query": "Is orange with thinner straps and is not patterned and orange.",
+  "candidate_count": 1000,
+  "ground_truth": {
+    "id": "FashionIQ_q_6035",
+    "relevant": [
+      "FashionIQ_q_2761"
+    ]
+  },
+  "source_url": "https://github.com/XiaoxiaoGuo/fashion-iq",
+  "predictions": {
+    "9B": {
+      "id": "FashionIQ_q_6035",
+      "ranked_results": [
+        {
+          "rank": 1,
+          "id": "FashionIQ_q_2761",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "FashionIQ_q_444",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "FashionIQ_q_564",
+          "relevant": false
+        }
+      ]
+    }
+  },
+  "models": {
+    "9B": {
+      "name": "WeMM-Embedding-9B",
+      "dimension": 4096
+    }
+  }
+}

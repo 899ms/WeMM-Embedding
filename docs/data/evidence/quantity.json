@@ -1,0 +1,43 @@
+{
+  "case_id": "quantity",
+  "task": "CIRR",
+  "query_id": "CIRR_q_1001",
+  "original_query": "<image>\nGiven an image, find a similar everyday image with the described changes: Fewer paper towels per pack.\n",
+  "display_query": "Fewer paper towels per pack.",
+  "candidate_count": 1000,
+  "ground_truth": {
+    "id": "CIRR_q_1001",
+    "relevant": [
+      "CIRR_q_737"
+    ]
+  },
+  "source_url": "https://github.com/Cuberick-Orion/CIRR",
+  "predictions": {
+    "9B": {
+      "id": "CIRR_q_1001",
+      "ranked_results": [
+        {
+          "rank": 1,
+          "id": "CIRR_q_737",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "CIRR_q_1283",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "CIRR_q_212",
+          "relevant": false
+        }
+      ]
+    }
+  },
+  "models": {
+    "9B": {
+      "name": "WeMM-Embedding-9B",
+      "dimension": 4096
+    }
+  }
+}

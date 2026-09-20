@@ -5,6 +5,9 @@
 </p>
 
 <p align="center">
+  <a href="https://tencent.github.io/WeMM-Embedding/">
+    <img src="https://img.shields.io/badge/🌐-Project%20Page-07C160" alt="Project Page">
+  </a>
   <a href="https://huggingface.co/collections/tencent/wemm-embedding">
     <img src="https://img.shields.io/badge/🤗-Hugging%20Face-yellow" alt="Hugging Face">
   </a>

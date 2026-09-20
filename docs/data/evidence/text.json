@@ -1,0 +1,43 @@
+{
+  "case_id": "text",
+  "task": "TextCaps_val_t2i",
+  "query_id": "q_text_12",
+  "original_query": "A corner building with a sign saying Red Corner Cafe above the door.",
+  "display_query": "A corner building with a sign saying Red Corner Cafe above the door.",
+  "candidate_count": 3166,
+  "ground_truth": {
+    "id": "q_text_12",
+    "relevant": [
+      "doc_img_2"
+    ]
+  },
+  "source_url": "https://textvqa.org/textcaps/",
+  "predictions": {
+    "9B": {
+      "id": "q_text_12",
+      "ranked_results": [
+        {
+          "rank": 1,
+          "id": "doc_img_2",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "doc_img_79",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "doc_img_0",
+          "relevant": false
+        }
+      ]
+    }
+  },
+  "models": {
+    "9B": {
+      "name": "WeMM-Embedding-9B",
+      "dimension": 4096
+    }
+  }
+}

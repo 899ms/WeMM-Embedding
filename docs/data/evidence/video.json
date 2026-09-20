@@ -1,0 +1,43 @@
+{
+  "case_id": "video",
+  "task": "MSRVTT_1kA",
+  "query_id": "query_427",
+  "original_query": "the mountain views are from a boat on the center of a lake",
+  "display_query": "the mountain views are from a boat on the center of a lake",
+  "candidate_count": 1000,
+  "ground_truth": {
+    "id": "query_427",
+    "relevant": [
+      "doc_video8312"
+    ]
+  },
+  "source_url": "https://www.microsoft.com/en-us/research/publication/msr-vtt-a-large-video-description-dataset-for-bridging-video-and-language/",
+  "predictions": {
+    "9B": {
+      "id": "query_427",
+      "ranked_results": [
+        {
+          "rank": 1,
+          "id": "doc_video8312",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "doc_video8307",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "doc_video9246",
+          "relevant": false
+        }
+      ]
+    }
+  },
+  "models": {
+    "9B": {
+      "name": "WeMM-Embedding-9B",
+      "dimension": 4096
+    }
+  }
+}
